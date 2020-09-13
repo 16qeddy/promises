@@ -46,6 +46,7 @@ describe('Basic chaining', function() {
       fetchProfileAndWriteToFile(fileWithGithubHandle, fileToWriteTo)
         .then(function() {
           var profile = JSON.parse(fs.readFileSync(fileToWriteTo, 'utf8'));
+
           expect(profile.id).to.equal(6980359);
           done();
         })
